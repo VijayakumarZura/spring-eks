@@ -26,6 +26,7 @@ jobs:
           projectBaseDir: .
           args: -Dsonar.organization=VijayakumarZura
             -Dsonar.projectKey=VijayakumarZura_spring-eks_AZS72Syv5wz7CGU8HmhP
+            -Dsonar.java.binaries=build/classes
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
