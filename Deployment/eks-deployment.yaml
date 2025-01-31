@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-eks
+  namespace: spring-eks-ns
+spec:
+  selector:
+    matchLabels:
+      app: spring-eks
+      replica: blue
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: spring-eks
+        replica: blue
+    spec:
+      containers:
+        - name: my-spring
+          image: 711387135806.dkr.ecr.eu-north-1.amazonaws.com/spring-eks:spring-eks_20241217_qa_v1.0.88
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8082
