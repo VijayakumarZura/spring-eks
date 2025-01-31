@@ -24,8 +24,7 @@ jobs:
         uses: sonarsource/sonarqube-scan-action@master
         with:
           projectBaseDir: .
-          args: |
-            -Dsonar.organization=VijayakumarZura
+          args: -Dsonar.organization=VijayakumarZura
             -Dsonar.projectKey=VijayakumarZura_spring-eks_AZS72Syv5wz7CGU8HmhP
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
